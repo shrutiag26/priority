@@ -50,7 +50,11 @@ public class Controller {
 	{
 		try
 		{
-			this.pService.setPriority(prior);
+			if(prior.getSatisfaction()<=5 && prior.getSatisfaction()>=1)
+			{
+				this.pService.setPriority(prior);
+				return new ResponseEntity<>(HttpStatus.OK); 
+			}
 			return new ResponseEntity<>(HttpStatus.OK); 
 		}
 		catch(Exception e){
