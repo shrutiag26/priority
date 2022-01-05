@@ -55,10 +55,11 @@ public class Controller {
 				this.pService.setPriority(prior);
 				return new ResponseEntity<>(HttpStatus.OK); 
 			}
-			return new ResponseEntity<>(HttpStatus.OK); 
+			else
+				return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 		catch(Exception e){
-			return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	}
 	
